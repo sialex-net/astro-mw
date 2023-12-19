@@ -1,0 +1,25 @@
+{
+  "name": "astro-mw",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "checkformat": "pnpm prettier --check . --plugin=prettier-plugin-astro",
+    "format": "pnpm prettier -w . --plugin=prettier-plugin-astro"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^8.0.0",
+    "@astrojs/tailwind": "^5.0.3",
+    "astro": "^4.0.6",
+    "tailwindcss": "^3.3.7"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-tailwindcss": "^0.5.9"
+  }
+}

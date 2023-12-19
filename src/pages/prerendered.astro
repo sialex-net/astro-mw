@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class='mx-auto max-w-xl'>
+    <h1>Astro</h1>
+    <div class='flex justify-center gap-x-4 py-8'>
+      <button
+        id='dark'
+        class='rounded border-2 border-blue-400 bg-blue-300 px-3 py-1'
+      >
+        Dark
+      </button>
+      <button
+        id='light'
+        class='rounded border-2 border-orange-400 bg-orange-300 px-3 py-1'
+      >
+        Light
+      </button>
+    </div>
+    <a href='/' class='block hover:underline'>
+      Go to server-side rendered page &gt;&gt;
+    </a>
+  </body>
+</html>
+
+<script>
+  document.querySelector('#dark')?.addEventListener('click', () => {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    let d = new Date();
+    d.setTime(d.getTime() + 7 * 24 * 60 * 60 * 1000);
+    document.cookie = `theme=dark;expires=${d.toUTCString()}`;
+  });
+
+  document.querySelector('#light')?.addEventListener('click', () => {
+    document.documentElement.setAttribute('data-theme', 'light');
+    let d = new Date();
+    d.setTime(d.getTime() + 7 * 24 * 60 * 60 * 1000);
+    document.cookie = `theme=light;expires=${d.toUTCString()}`;
+  });
+</script>
